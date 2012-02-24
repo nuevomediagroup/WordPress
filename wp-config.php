@@ -89,7 +89,13 @@ define('WP_DEBUG', false);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+define('ABSPATH', dirname(__FILE__) . '/');
+
+
+/** should allow for ftp connection */
+
+putenv('TMPDIR='. ABSPATH .'tmp');
+define('WP_TEMP_DIR', ABSPATH . 'tmp');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
